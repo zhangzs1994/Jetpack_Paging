@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="myHandles"
+            type="com.zzs.jetpack_paging.MainActivity.MyHandles" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/srl_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:onClick="@{(view)->myHandles.refresh(view)}"
+            android:text="刷新"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
